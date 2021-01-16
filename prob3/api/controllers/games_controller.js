@@ -99,26 +99,6 @@ module.exports.updateGame = function(req, res) {
       })
     }
   })
-  Game.update({
-    title: req.body.title,
-    year: parseInt(req.body.year),
-    rate: parseInt(req.body.rate),
-    price: parseFloat(req.body.price),
-    minPlayers: parseInt(req.body.min_players),
-    maxPlayers: parseInt(req.body.max_players),
-    minAge: parseInt(req.body.min_age),
-    designers: req.body.designers
-  }, function(err, updatedGame){
-    response = {
-      status: 204,
-      message: updatedGame
-    }
-    if(err) {
-      response.status = 500;
-      response.message = err;
-    }
-    res.status(response.status).json(response.message);
-  })
 }
 
 module.exports.deleteGame = function(req, res) {
