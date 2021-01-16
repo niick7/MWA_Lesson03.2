@@ -11,7 +11,7 @@ router.route("/students/:studentId").get(studentsController.getStudent)
 router.route("/students/:studentId/addresses").get(addressesController.getAddresses)
                                       .post(addressesController.createAddress);
 router.route("/students/:studentId/addresses/:addressId").get(addressesController.getAddress)
-                                                .put(addressesController.updateAddress)
-                                                .delete(addressesController.deleteAddress);
+                                                         .put(addressesController.updateAddress)
+                                                         .delete(addressesController.deleteAddress);
 
 module.exports = router;
